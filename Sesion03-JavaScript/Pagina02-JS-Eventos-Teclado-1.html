@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #555;
+            padding: 10px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            color: #ffcc00;
+        }
+        
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .div-contenido {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <script src="js/pagina02-script1.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Mi Sitio Web</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="div-contenido">
+            <h2>Contenido 1</h2>
+            <input type="text" id="input1" 
+                   placeholder="Escribe algo y presiona una tecla">
+            <!--
+            <input type="text" id="input1" 
+                   placeholder="Escribe algo y presiona una tecla">
+            <input type="text" id="input1" 
+                   placeholder="Escribe algo y presiona una tecla">
+            -->
+            <span id="output1" style="font-size:24px; font-weight:bold;"></span>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

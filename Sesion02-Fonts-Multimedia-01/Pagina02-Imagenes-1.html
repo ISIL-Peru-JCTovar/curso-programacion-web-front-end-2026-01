@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <!-- Importante: ajusta la escala al ancho del dispositivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo: meta viewport</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      font-family:  'Zalando Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      word-spacing: 4px;
+      font-optical-sizing: auto;
+      font-variation-settings: "wdth" 100;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+    /*
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+    */
+
+    .container_flex {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+    }
+
+    .item-cabecera {
+      flex-grow: 10;
+      flex-shrink: 1;
+      background-color: cadetblue;
+    }
+
+    .item-cuerpo {
+      flex-grow: 2;
+      flex-shrink: 1;
+      background-color: bisque;
+    }
+
+    .item-pie {
+      flex-grow: 1;
+      flex-shrink: 1;
+      background-color: chocolate;
+    }
+
+    .container_grid {  
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px 3px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        ". ."
+        ". .";
+    }
+
+  </style>
+</head>
+<body>
+  
+  <h1>ISIL - Ejemplo de Multimedia</h1>
+
+  <div class="container_flex">
+    <div class="item-cabecera">
+      <header style="text-align:center; padding:1rem; color:#b6e9e3;">
+        <p class="title">ISIL - Bienvenidos al Curso de Desarrollo Web Front-End</p>
+      </header>
+    </div>
+    <!-- Todas las imagenes no deben ser JPG o PNG o TIFF, etc, en su defecto deben ser WEBP -->
+    <div class="item-cuerpo">
+      <div class="container_grid">
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <div>
+          <!-- 
+          Utilizar picture en vez de img srcset que es mas eficiente en las reglas, esto te permite controlar
+          mejor el rendimiento de carga de imagenes, dado que solo se descarga de forma principal la version
+          adaptada de pantalla del dispositivo.
+          -->
+          <!--
+          <img src="imgs/img01-paisaje001.webp" alt="Imagen de un paisaje"
+               srcset="imgs/img01-paisaje001-256x171.webp 256w,
+                       imgs/img01-paisaje001-512x341.webp 512w,
+                       imgs/img01-paisaje001-1024x682.webp"
+               sizes="(max-width: 1024px) 256px, 512px"
+               width="768" height="512" />
+          -->
+          <picture>
+            <source srcset="imgs/img01-paisaje001-256x171.webp" media="(min-width: 500px) and (max-width: 756px)">
+            <source srcset="imgs/img01-paisaje001-512x341.webp" media="(min-width: 757px) and (max-width: 1013px)">
+            <source srcset="imgs/img01-paisaje001-1024x682.webp" media="(min-width: 1014px)">
+            <img src="imgs/img01-paisaje001.webp" alt="Imagen de un paisaje">
+          </picture>
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <div>
+          <img src="imgs/img01-paisaje001.webp" alt="Imagen de un paisaje"
+               srcset="imgs/img01-paisaje001-256x171.webp 500w,
+                       imgs/img01-paisaje001-512x341.webp 757w,
+                       imgs/img01-paisaje001-1024x682.webp 1014w"
+               sizes="(max-width: 1024px) 256px, 512px"
+               width="768" height="512" />
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <div>
+          <img src="imgs/img01-paisaje001.webp" alt="Ejemplo responsive">
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <div>
+          <!-- loading=lazy permite la carga ociosa, es decir cuando recien se scrollea la pantalla  -->
+          <img src="imgs/img01-paisaje002.webp" alt="Ejemplo responsive" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="item-pie">
+      <footer style="text-align:center; padding:1rem; color:#666;">
+        <p>&copy; Ejemplo — Prueba la vista en DevTools (Ctrl+Shift+M)</p>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>

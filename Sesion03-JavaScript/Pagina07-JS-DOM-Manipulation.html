@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="css/pagina03-estilos1.css">
+    <script src="js/pagina07-script1.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Mi Sitio Web</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="div-contenido">
+            <h2>Contenido 1</h2>
+            <form action="urlDelBackEnd" method="POST">
+            <div>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+            </div>
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+            </div>
+            <div id="divPais">
+                <label for="pais">País:</label><br>
+                <select id="pais" name="pais" required>
+                    <option value="">Selecciona un país</option>
+                    <option value="pe">Peru</option>
+                    <option value="ar">Argentina</option>
+                    <option value="ve">Venezuela</option>
+                    <option value="es">España</option>
+                    <option value="mx">México</option>
+                    <option value="cl">Chile</option>
+                    <option value="xx">Otro...</option>
+                </select><br><br>
+            </div>
+            <div>
+                <label for="genero">Género:</label><br>
+                <input type="radio" id="genero-m" name="genero" value="masculino" required>
+                <label for="genero-m">Masculino</label><br>
+                <input type="radio" id="genero-f" name="genero" value="femenino">
+                <label for="genero-f">Femenino</label><br><br>
+            </div>
+            <div>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="30" required></textarea><br><br>
+            </div>
+            <div>
+                <input type="checkbox" id="suscripcion" name="suscripcion">
+                <label for="suscripcion">Suscribirme al boletín</label><br><br>
+            </div>
+            <div>
+                <input type="submit" value="Enviar">
+            </div>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

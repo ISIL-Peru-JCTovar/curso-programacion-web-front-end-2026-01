@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrousel de Imágenes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f0f0f0;
+    }
+
+    .carrousel-container {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .carrousel-imagenes {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .carrousel-imagenes img {
+      width: 800px;
+      height: 600px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .controles {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .punto {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .punto.activo {
+      background: #fff;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      border: none;
+      font-size: 24px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+      z-index: 5;
+    }
+
+    button:hover {
+      background: rgba(255,255,255,0.9);
+    }
+
+    .anterior {
+      left: 20px;
+    }
+
+    .siguiente {
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="carrousel-container">
+    <div class="carrousel-imagenes" id="carrousel">
+      <img src="https://www.fundacionaquae.org/wp-content/uploads/2018/10/proteger-a-los-animales-1024x654.jpg" alt="Imagen 1">
+      <img src="https://img.freepik.com/foto-gratis/hermosa-foto-tigre-pie-bosque-dia_181624-19728.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagen 2">
+      <img src="https://www.fundacionaquae.org/wp-content/uploads/2020/09/animales-que-hibernan.jpg" alt="Imagen 3">
+      <img src="https://examtimeassets.s3.amazonaws.com/uploads/media/image/20899434/desktop_2c81aefd-c8dc-459a-a640-0ec6080866ae.jpg" alt="Imagen 4">
+      <img src="https://www.ejemplos.co/wp-content/uploads/2016/09/pez-nemo-vertebrados-min-e1507319712942.jpg" alt="Imagen 5">
+    </div>
+
+    <button class="anterior" onclick="cambiarImagen(-1)">&#10094;</button>
+    <button class="siguiente" onclick="cambiarImagen(1)">&#10095;</button>
+
+    <div class="controles">
+      <span class="punto activo" onclick="irA(0)"></span>
+      <span class="punto" onclick="irA(1)"></span>
+      <span class="punto" onclick="irA(2)"></span>
+      <span class="punto" onclick="irA(3)"></span>
+      <span class="punto" onclick="irA(4)"></span>
+    </div>
+  </div>
+
+  <script>
+    let indiceActual = 0;
+    const carrousel = document.getElementById('carrousel');
+    const puntos = document.querySelectorAll('.punto');
+
+    function cambiarImagen(direccion) {
+      indiceActual += direccion;
+      if (indiceActual >= 5) indiceActual = 0;
+      if (indiceActual < 0) indiceActual = 4;
+      actualizarCarrousel();
+    }
+
+    function irA(indice) {
+      indiceActual = indice;
+      actualizarCarrousel();
+    }
+
+    function actualizarCarrousel() {
+      carrousel.style.transform = `translateX(-${indiceActual * 800}px)`;
+      puntos.forEach((punto, i) => {
+        punto.classList.toggle('activo', i === indiceActual);
+      });
+    }
+  </script>
+</body>
+</html>

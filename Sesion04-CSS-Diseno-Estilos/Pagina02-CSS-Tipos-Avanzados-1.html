@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISIL - Curso de Programacion Web Front-End</title>
+  <style>
+
+    /* CSS por tipo de etiqueta */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+      border-bottom: 3px solid #0066cc;
+      padding-bottom: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* font-size: 14px; */
+    }
+
+    p {
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* CSS por class */
+    .destacado {
+      background-color: #ffeb3b;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .seccion, .seccionespecial {
+      color: white;
+      background-color: black;
+      margin: 15px 0;
+      padding: 15px;
+      border-left: 4px solid #0066cc;
+    }
+
+    .seccionadyacente {
+      color: white;
+      background-color: rgb(104, 9, 9);
+      margin: 15px 0;
+      padding: 15px;
+      border-left: 4px solid #0066cc;
+    }
+
+    /* CSS por id */
+    #principal {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #e3f2fd;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    #footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* CSS por selector jerarquico indirecto */
+    .seccion h2 {
+      color: #ffeb3b;
+    }
+    .seccion p {
+      font-style: italic;
+    }
+
+    /* CSS por selector jerarquico directo */
+    .seccionespecial > .destacado {
+      background-color: #ff5722;
+      color: white;
+      padding: 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .seccionespecial > p > .destacado {
+      background-color: #1207b3;
+      color: white;
+      padding: 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* CSS por selector adyacente */
+    .seccionadyacente p + p {
+      color: #12ee24;
+      background-color: #333;
+      font-weight: bold;
+    }
+
+    /* Mas de CSS avanzado puede ir aqui, por ejemplo CSS con filtros */
+    /* Mas de CSS avanzado puede ir aqui, por ejemplo variables tokens (design systems), que aprovecha SASS */
+    /* Pseudo clases avanzadas como :nth-child(), :not(), etc. */
+
+  </style>
+</head>
+<body>
+
+  <div id="principal">
+    <h1>ISIL - Curso de Programacion Web Front-End</h1>
+    <h1>Tipos de CSS - Ejemplo Básico</h1>
+
+    <div class="seccion">
+      <h2>CSS por Tipo de Etiqueta</h2>
+      <p>Este párrafo tiene estilos aplicados por tipo de etiqueta &lt;p&gt;</p>
+    </div>
+
+    <div class="seccion">
+      <h2>CSS por Class</h2>
+      <p>Este texto tiene una <span class="destacado">class llamada "destacado"</span> que le aplica estilos especiales.</p>
+    </div>
+
+    <div class="seccion">
+      <h2>CSS por ID</h2>
+      <p>El contenedor principal tiene un <span class="destacado">ID "principal"</span> que le da estilos únicos.</p>
+    </div>
+
+    <div class="seccionespecial">
+      <h2>CSS por Selector Jerárquico</h2>
+      <p>Los títulos &lt;h2&gt; y párrafos &lt;p&gt; dentro de esta sección tienen estilos especiales aplicados mediante selectores jerárquicos.</p>
+      <p>El contenedor principal tiene un <span class="destacado">ID "especial"</span> que le da estilos únicos.</p>
+      <span class="destacado">Tener en cuenta que este es otro segundo span con el mismo class destacado.</span>
+    </div>
+
+    <div class="seccionadyacente">
+      <h2>CSS por Selector Adyacente</h2>
+      <p>Este párrafo no tiene estilos especiales porque no está dentro de la sección especial.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita culpa similique itaque doloribus quasi fugit accusantium incidunt beatae exercitationem corporis, modi mollitia numquam, velit dolore tempora repellat illo amet fugiat?</p>
+      <p>Este párrafo sí tiene estilos especiales porque es adyacente al párrafo anterior.</p>
+      <p>Y seguimos con los parrafos adyacentes</p>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <p>&copy; 2026 - Programación Web Front-End</p>
+  </footer>
+
+</body>
+
+</html>

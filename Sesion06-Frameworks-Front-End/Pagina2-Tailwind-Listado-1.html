@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISIL - Sesion 6 - Mantenimiento de Clientes (CRUD Clientes)</title>
+    <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-50 p-6">
+    <div class="container max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Listado de Clientes (Tailwind)</h2>
+        <!-- Filtro -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Buscar por nombre...">
+            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Buscar por correo...">
+            <button class="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Filtrar</button>
+        </div>
+        <!-- Tabla -->
+        <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+          <table class="min-w-full table-auto border-collapse">
+              <thead class="bg-gray-800 text-white">
+                  <tr>
+                      <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider border-b">ID</th>
+                      <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider border-b">Nombre</th>
+                      <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider border-b">Correo Electrónico</th>
+                      <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider border-b">Teléfono</th>
+                      <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider border-b text-center">Acciones</th>
+                  </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-gray-50 odd:bg-white even:bg-gray-100 transition duration-150">
+                      <td class="px-6 py-4 text-sm text-gray-700">1</td>
+                      <td class="px-6 py-4 font-medium text-gray-900">Juan Pérez</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">juan.perez@gmail.com</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">+51 987654321</td>
+                      <td class="px-6 py-4 text-center space-x-2">
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Editar</button>
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Eliminar</button>
+                      </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 odd:bg-white even:bg-gray-100 transition duration-150">
+                      <td class="px-6 py-4 text-sm text-gray-700">2</td>
+                      <td class="px-6 py-4 font-medium text-gray-900">María López</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">marialopez123@hotmail.com</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">+51 912345678</td>
+                      <td class="px-6 py-4 text-center space-x-2">
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Editar</button>
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Eliminar</button>
+                      </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 odd:bg-white even:bg-gray-100 transition duration-150">
+                      <td class="px-6 py-4 text-sm text-gray-700">3</td>
+                      <td class="px-6 py-4 font-medium text-gray-900">Carlos Sánchez</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">carlos.sanchez@outlook.com</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">+51 987654321</td>
+                      <td class="px-6 py-4 text-center space-x-2">
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Editar</button>
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Eliminar</button>
+                      </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 odd:bg-white even:bg-gray-100 transition duration-150">
+                      <td class="px-6 py-4 text-sm text-gray-700">4</td>
+                      <td class="px-6 py-4 font-medium text-gray-900">Ana Gómez</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">ana.gomez@gmail.com</td>
+                      <td class="px-6 py-4 text-sm text-gray-600">+51 912345678</td>
+                      <td class="px-6 py-4 text-center space-x-2">
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Editar</button>
+                          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-xs transition duration-150">Eliminar</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISIL - Sesion 6 - Mantenimiento de Clientes (CRUD Clientes)</title>
+    <!-- Importando las librerias de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Importando las librerias de jQuery -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <!-- Validaciones de formulario con JQuery -->
+    <script>
+
+        //-- Validacion de formulario con JScript Vanilla (es el enfoque actual al 2026)
+        /*
+        document.addEventListener("DOMContentLoader", function(event) {
+            event.preventDefault(); // Evita el envío del formulario para validación
+        });
+        */
+
+        //-- Validacion de formulario con jQuery Validation Plugin
+        $(document).ready(function() {
+            $("form").validate({
+                rules: {
+                    nombre: {
+                        required: true,
+                        minlength: 3
+                    },
+                    dni: {
+                        required: true,
+                        digits: true,
+                        minlength: 8,
+                        maxlength: 8
+                    },
+                    pais: {
+                        required: true
+                    },
+                    correo: {
+                        required: true,
+                        email: true
+                    },
+                    telefono: {
+                        required: true,
+                        digits: true,
+                        minlength: 9,
+                        maxlength: 16
+                    }
+                },
+                messages: {
+                    nombre: {
+                        required: "Por favor, ingrese el nombre.",
+                        minlength: "El nombre debe tener al menos 3 caracteres."
+                    },
+                    dni: {
+                        required: "Por favor, ingrese el DNI.",
+                        digits: "El DNI debe contener solo números.",
+                        minlength: "El DNI debe tener 8 dígitos.",
+                        maxlength: "El DNI debe tener 8 dígitos."
+                    },
+                    pais: {
+                        required: "Por favor, seleccione un país."
+                    },
+                    correo: {
+                        required: "Por favor, ingrese el correo electrónico.",
+                        email: "Por favor, ingrese un correo electrónico válido."
+                    },
+                    telefono: {
+                        required: "Por favor, ingrese el número de teléfono.",
+                        digits: "El teléfono debe contener solo números.",
+                        minlength: "El teléfono debe tener 9 dígitos.",
+                        maxlength: "El teléfono debe tener 9 dígitos."
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "div",
+                highlight: function(element, errorClass) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element, errorClass) {
+                    $(element).removeClass("is-invalid");
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="mb-4">Formulario de Clientes (Bootstrap)</h2>
+        <!-- Formulario -->
+        <div class="card">
+            <div class="card-body">
+                <form action="https://mirutabackend.com/miservicio/miendpoint" method="POST">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre completo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="dni" class="form-label">DNI</label>
+                        <input type="text" class="form-control" id="dni" name="dni" placeholder="Ingrese el DNI">
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Pais</label>
+                        <select class="form-select" id="pais" name="pais">
+                            <option value="">Seleccione un país</option>
+                            <option value="peru">Perú</option>
+                            <option value="chile">Chile</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="mexico">México</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese el correo electrónico">
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Sexo</label>
+                        <input type="radio" class="form-check-input" name="sexo" id="sexo_masculino" value="masculino"> Masculino
+                        <input type="radio" class="form-check-input ms-3" name="sexo" id="sexo_femenino" value="femenino"> Femenino
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el número de teléfono">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

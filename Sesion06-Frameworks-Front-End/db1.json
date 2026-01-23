@@ -1,0 +1,76 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "María García López",
+      "correo": "maria.garcia@email.com",
+      "pais": "España",
+      "sexo": "Femenino",
+      "telefono": "+34 912 345 678"
+    },
+    {
+      "id": 2,
+      "nombre": "Juan Martínez Ruiz",
+      "correo": "juan.martinez@email.com",
+      "pais": "México",
+      "sexo": "Masculino",
+      "telefono": "+52 55 1234 5678"
+    },
+    {
+      "id": 3,
+      "nombre": "Ana Rodríguez Pérez",
+      "correo": "ana.rodriguez@email.com",
+      "pais": "Argentina",
+      "sexo": "Femenino",
+      "telefono": "+54 11 2345 6789"
+    },
+    {
+      "id": 4,
+      "nombre": "Carlos Fernández Gómez",
+      "correo": "carlos.fernandez@email.com",
+      "pais": "Colombia",
+      "sexo": "Masculino",
+      "telefono": "+57 1 2345 6789"
+    },
+    {
+      "id": 5,
+      "nombre": "Laura Sánchez Torres",
+      "correo": "laura.sanchez@email.com",
+      "pais": "Perú",
+      "sexo": "Femenino",
+      "telefono": "+51 1 2345 6789"
+    },
+    {
+      "id": 6,
+      "nombre": "Roberto López Díaz",
+      "correo": "roberto.lopez@email.com",
+      "pais": "Chile",
+      "sexo": "Masculino",
+      "telefono": "+56 2 2345 6789"
+    },
+    {
+      "id": 7,
+      "nombre": "Sofia Jiménez Morales",
+      "correo": "sofia.jimenez@email.com",
+      "pais": "Ecuador",
+      "sexo": "Femenino",
+      "telefono": "+593 2 234 5678"
+    },
+    {
+      "id": 8,
+      "nombre": "Miguel Hernández Campos",
+      "correo": "miguel.hernandez@email.com",
+      "pais": "Venezuela",
+      "sexo": "Masculino",
+      "telefono": "+58 212 345 6789"
+    },
+    {
+      "id": 9,
+      "nombre": "Isabella Vargas Silva",
+      "correo": "isabella.vargas@email.com",
+      "pais": "Bolivia",
+      "sexo": "Femenino",
+      "telefono": "+591 2 345 6789"
+    }
+  ]
+}
